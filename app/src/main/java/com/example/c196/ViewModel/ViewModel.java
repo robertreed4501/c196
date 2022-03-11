@@ -1,0 +1,48 @@
+package com.example.c196.ViewModel;
+
+import android.app.Application;
+
+import androidx.annotation.NonNull;
+import androidx.lifecycle.AndroidViewModel;
+import androidx.lifecycle.LiveData;
+
+import com.example.c196.Database.Repository;
+import com.example.c196.Model.Assessment;
+import com.example.c196.Model.Course;
+import com.example.c196.Model.Term;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class ViewModel extends AndroidViewModel {
+
+    private Repository repository;
+
+    private LiveData<List<Term>> vmAllTerms;
+    private LiveData<List<Course>> vmAllCourses;
+    private LiveData<List<Assessment>> vmAllAssessments;
+
+    public ViewModel(@NonNull Application application) {
+        super(application);
+        repository = new Repository(application);
+        vmAllTerms = repository.getAllTerms();
+        vmAllCourses = repository.getAllCourses();
+        vmAllAssessments = repository.getAllAssessments();
+    }
+
+    public void insertTerm(Term term){
+        repository.insertTerm(term);
+    }
+
+    public void insertCourse(Course course){
+        repository.insertCourse(course);
+    }
+
+    public void insertAssessment(Assessment assessment){
+        repository.insertAssessment(assessment);
+    }
+
+    public LiveData<List<Term>> getVmAllTerms() {
+        return vmAllTerms;
+    }
+}

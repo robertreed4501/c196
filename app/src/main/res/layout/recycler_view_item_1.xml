@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="58dp"
+    android:layout_margin="5dp"
+    android:background="#FFC6C6"
+    android:backgroundTint="#FDCBCB"
+    android:backgroundTintMode="add"
+    app:cardBackgroundColor="#E1FFCDCD"
+    app:cardCornerRadius="10dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="58dp"
+        android:background="#FFE2E2">
+
+        <ImageView
+            android:id="@+id/termIcon"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@tools:sample/avatars" />
+
+        <TextView
+            android:id="@+id/termNameText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginBottom="8dp"
+            android:textColor="@android:color/black"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/termDatesText"
+            app:layout_constraintStart_toEndOf="@+id/termIcon"
+            app:layout_constraintTop_toTopOf="@+id/termIcon"
+            tools:text="@tools:sample/full_names" />
+
+        <TextView
+            android:id="@+id/termDatesText"
+            android:layout_width="299dp"
+            android:layout_height="22dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintBottom_toBottomOf="@+id/termIcon"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.050"
+            app:layout_constraintStart_toEndOf="@+id/termIcon"
+            tools:text="@tools:sample/lorem[4:10]" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>
