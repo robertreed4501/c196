@@ -14,7 +14,8 @@
             android:exported="false" />
         <activity
             android:name=".UI.TermViewActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".UI.TermsListActivity"/>
         <activity
             android:name=".UI.CourseViewActivity"
             android:exported="false" />
@@ -26,7 +27,8 @@
             android:exported="false" />
         <activity
             android:name=".UI.TermsListActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".UI.MainActivity"/>
         <activity
             android:name=".UI.MainActivity"
             android:exported="true">

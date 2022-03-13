@@ -40,6 +40,7 @@ public class TermsListActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         viewModel = new ViewModelProvider(this).get(ViewModel.class);
+        /*adapter.setList();*/
         viewModel.getVmAllTerms().observe(this, terms -> {
             adapter.submitList(terms);
         });
@@ -52,10 +53,5 @@ public class TermsListActivity extends AppCompatActivity {
         ViewModel vm = new ViewModel((Application)view.getContext().getApplicationContext());
         vm.insertTerm(new Term(name, Date.from(Instant.now()), Date.from(Instant.now().plusSeconds(86400))));
     }
-
-    public void cardClicked(Intent i){
-        startActivity(i);
-    }
-
 
 }

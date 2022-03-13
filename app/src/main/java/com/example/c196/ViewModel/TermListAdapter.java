@@ -8,15 +8,23 @@ import androidx.recyclerview.widget.ListAdapter;
 
 import com.example.c196.Model.Term;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class TermListAdapter extends ListAdapter<Term, TermViewHolder> {
     public TermListAdapter(@NonNull DiffUtil.ItemCallback<Term> diffCallback) {
         super(diffCallback);
     }
 
+    /*public List<Term> getList(){
+        return getCurrentList();
+
+    }*/
+
     @NonNull
     @Override
     public TermViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return TermViewHolder.create(parent);
+        return TermViewHolder.create(parent, getCurrentList());
     }
 
     @Override
