@@ -31,7 +31,7 @@ public class CourseListAdapter extends ListAdapter<Course, CourseViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull CourseViewHolder holder, int position) {
         Course current = getItem(position);
-        holder.bind(current.getCourseName(), current.getCourseStart() + " - " + current.getCourseEnd(), current.getCourseStatus());
+        holder.bind(current.getCourseName() + " " + current.getCourseID(), current.getCourseStart() + " - " + current.getCourseEnd(), current.getCourseStatus());
     }
 
     public static class WordDiff extends DiffUtil.ItemCallback<Course>{

@@ -8,7 +8,6 @@ import com.example.c196.Model.Assessment;
 import com.example.c196.Model.Course;
 import com.example.c196.Model.Term;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class Repository {
@@ -21,6 +20,7 @@ public class Repository {
     private LiveData<List<Course>> repoAllCourses;
     private LiveData<List<Assessment>> repoAllAssessments;
     private LiveData<List<Course>> repoAllCoursesInTerm;
+    private List<Term> terms;
 
     public Repository(Application application){
         DB db = DB.getDB(application);
@@ -61,5 +61,23 @@ public class Repository {
         DB.dbWriteExecutor.execute(() -> repoAssessmentDAO.insert(assessment));
     }
 
+    public void updateTerm(Term term){
+        DB.dbWriteExecutor.execute(() -> repoTermDAO.update(term));
 
+    }
+
+    public void deleteTerm(Term term){
+        DB.dbWriteExecutor.execute(() -> repoTermDAO.delete(term));
+    }
+
+    public Term getTermByID(int id) {
+        DB.dbWriteExecutor.execute(() -> {
+            terms = repoTermDAO.getTermByID(id);
+        });
+        return terms.get(0);
+    }
+
+    public void deleteCourse(Course course) {
+        DB.dbWriteExecutor.execute(() -> repoCourseDAO.delete(course));
+    }
 }

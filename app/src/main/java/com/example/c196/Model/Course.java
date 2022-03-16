@@ -3,6 +3,7 @@ package com.example.c196.Model;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.ForeignKey;
+import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
 
 
@@ -14,6 +15,26 @@ public class Course {
 
     public int getCourseID() {
         return courseID;
+    }
+
+    @Ignore
+    public Course(String courseName, String courseStart, String courseEnd, String courseStatus, int termID) {
+        this.courseName = courseName;
+        this.courseStart = courseStart;
+        this.courseEnd = courseEnd;
+        this.courseStatus = courseStatus;
+        this.termID = termID;
+    }
+
+    public Course(String courseName, String courseStart, String courseEnd, String courseStatus, String instructorName, String instructorPhone, String instructorEmail, int termID) {
+        this.courseName = courseName;
+        this.courseStart = courseStart;
+        this.courseEnd = courseEnd;
+        this.courseStatus = courseStatus;
+        this.instructorName = instructorName;
+        this.instructorPhone = instructorPhone;
+        this.instructorEmail = instructorEmail;
+        this.termID = termID;
     }
 
     public String getCourseName() {

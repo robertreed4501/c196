@@ -1,16 +1,19 @@
 package com.example.c196.ViewModel;
 
 import android.content.Intent;
+import android.os.Parcelable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.constraintlayout.motion.widget.OnSwipe;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.c196.Model.Term;
 import com.example.c196.R;
+import com.example.c196.UI.AddEditTermActivity;
 import com.example.c196.UI.TermViewActivity;
 
 import java.util.List;
@@ -38,9 +41,12 @@ public class TermViewHolder extends RecyclerView.ViewHolder {
             i.putExtra("Term_Name", current.getName());
             i.putExtra("Term_Start", current.getStartDate().toString());
             i.putExtra("Term_End", current.getEndDate().toString());
+            AddEditTermActivity.setCurrentTerm(current);
             view.getContext().startActivity(i);
 
         });
+
+
     }
 
     public void bind(String name, String dates){
@@ -58,4 +64,7 @@ public class TermViewHolder extends RecyclerView.ViewHolder {
         this.myList = myTerms;
     }*/
 
+    public static Term getTermByPosition(int position){
+        return myList.get(position);
+    }
 }

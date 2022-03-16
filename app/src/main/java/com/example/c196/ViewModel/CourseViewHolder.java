@@ -43,6 +43,10 @@ public class CourseViewHolder extends RecyclerView.ViewHolder {
         });*/
     }
 
+    public static Course getCourseByPosition(int adapterPosition) {
+        return myList.get(adapterPosition);
+    }
+
     public void bind(String name, String dates, String status){
         courseNameText.setText(name);
         courseDatesText.setText(dates);

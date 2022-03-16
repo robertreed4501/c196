@@ -1,14 +1,17 @@
 package com.example.c196.UI;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.app.AlertDialog;
 import android.app.Application;
 import android.app.Dialog;
+import android.app.SearchManager;
 import android.content.Intent;
+import android.graphics.Canvas;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -48,11 +51,38 @@ public class TermsListActivity extends AppCompatActivity {
             adapter.submitList(terms);
         });
 
+
+
+        ItemTouchHelper.SimpleCallback itemTouchHelperCallback = new ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT) {
+            @Override
+            public boolean onMove(RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder, RecyclerView.ViewHolder target) {
+                return false;
+            }
+
+            @Override
+            public void onSwiped(RecyclerView.ViewHolder viewHolder, int direction) {
+
+
+
+                viewModel.deleteTerm(TermViewHolder.getTermByPosition(viewHolder.getAdapterPosition()));
+                adapter.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onChildDraw(Canvas c, RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder, float dX, float dY, int actionState, boolean isCurrentlyActive) {
+                // view the background view
+            }
+        };
+
+// attaching the touch helper to recycler view
+        new ItemTouchHelper(itemTouchHelperCallback).attachToRecyclerView(recyclerView);
+
     }
 
     public void addTermFABClicked(View view){
         Toast.makeText(getApplicationContext(), "It hath been clicked", Toast.LENGTH_LONG).show();
         Intent i = new Intent(TermsListActivity.this, AddEditTermActivity.class);
+        i.putExtra("isNewTerm", true);
         startActivity(i);
     }
 

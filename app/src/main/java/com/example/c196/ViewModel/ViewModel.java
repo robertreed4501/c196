@@ -42,6 +42,16 @@ public class ViewModel extends AndroidViewModel {
         repository.insertAssessment(assessment);
     }
 
+    public void updateTerm(Term term) { repository.updateTerm(term);}
+
+    public void deleteTerm(Term term) { repository.deleteTerm(term);}
+
+    public void deleteCourse(Course course) { repository.deleteCourse(course);}
+
+    public Term getTermByID(int id){
+        return repository.getTermByID(id);
+    }
+
     public LiveData<List<Term>> getVmAllTerms() {
         return vmAllTerms;
     }

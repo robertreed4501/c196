@@ -2,6 +2,7 @@ package com.example.c196.Model;
 
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
+import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
 
 import java.time.LocalDate;
@@ -11,6 +12,14 @@ import java.util.Date;
 public class Term {
 
     public Term(String name, String startDate, String endDate){
+        this.name = name;
+        this.startDate = startDate;
+        this.endDate = endDate;
+    }
+
+    @Ignore
+    public Term(int id, String name, String startDate, String endDate){
+        this.termID = id;
         this.name = name;
         this.startDate = startDate;
         this.endDate = endDate;

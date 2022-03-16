@@ -20,8 +20,10 @@ import com.example.c196.ViewModel.ViewModel;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 
 public class AddEditTermActivity extends AppCompatActivity {
 
@@ -31,6 +33,9 @@ public class AddEditTermActivity extends AppCompatActivity {
     private DatePickerDialog.OnDateSetListener termEndListener;
     private Button saveTermButton;
     private TextView termName;
+    private boolean isNewTerm;
+    private int currentTermID;
+    private static Term currentTerm;
 
     private ViewModel viewModel;
 
@@ -38,10 +43,20 @@ public class AddEditTermActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_edit_term);
-
         viewModel = new ViewModel(getApplication());
         termStart = findViewById(R.id.termStartClickableText);
         termEnd = findViewById(R.id.termEndClickableText);
+        termName = findViewById(R.id.addTermNameText);
+        saveTermButton = findViewById(R.id.saveTermButton);
+
+        Intent i = getIntent();
+        if(i.hasExtra("name")) termName.setText(i.getStringExtra("name"));
+        if(i.hasExtra("start")) termStart.setText(i.getStringExtra("start"));
+        if(i.hasExtra("end")) termEnd.setText(i.getStringExtra("end"));
+        if(i.hasExtra("termID")) currentTermID = i.getIntExtra("termID", 0);
+
+        isNewTerm = i.getBooleanExtra("isNewTerm", true);
+
 
         termStart.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -109,18 +124,30 @@ public class AddEditTermActivity extends AppCompatActivity {
             }
         };
 
-        termName = findViewById(R.id.addTermNameText);
-        saveTermButton = findViewById(R.id.saveTermButton);
+
         saveTermButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                /*Term term = new Term("","","");
+                List<Term> termList = new ArrayList<>();
+                for (int i = 0; i < termList.size(); i++){
+                    if (termList.get(i).getTermID()==currentTermID)
+                        term = termList.get(i);
+                }
+                viewModel.getVmAllTerms().getValue();*/
                 String name = termName.getText().toString();
                 String start = termStart.getText().toString();
                 String end = termEnd.getText().toString();
-                viewModel.insertTerm(new Term(name, start, end));
+                if(isNewTerm) viewModel.insertTerm(new Term(name, start, end));
+                else viewModel.updateTerm(new Term(currentTerm.getTermID(), name, start, end));
+
                 Intent i = new Intent(AddEditTermActivity.this, TermsListActivity.class);
                 startActivity(i);
             }
         });
+    }
+
+    public static void setCurrentTerm(Term term){
+        currentTerm = term;
     }
 }
