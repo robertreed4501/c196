@@ -6,10 +6,47 @@ import androidx.room.ForeignKey;
 import androidx.room.PrimaryKey;
 
 
+import java.time.LocalDate;
 import java.util.Date;
 
 @Entity (tableName = "Courses", foreignKeys =  @ForeignKey(entity=Term.class, parentColumns="Term_ID", childColumns="Associated_Term_ID"))
 public class Course {
+
+    public int getCourseID() {
+        return courseID;
+    }
+
+    public String getCourseName() {
+        return courseName;
+    }
+
+    public String getCourseStart() {
+        return courseStart;
+    }
+
+    public String getCourseEnd() {
+        return courseEnd;
+    }
+
+    public String getCourseStatus() {
+        return courseStatus;
+    }
+
+    public String getInstructorName() {
+        return instructorName;
+    }
+
+    public String getInstructorPhone() {
+        return instructorPhone;
+    }
+
+    public String getInstructorEmail() {
+        return instructorEmail;
+    }
+
+    public int getTermID() {
+        return termID;
+    }
 
     @PrimaryKey (autoGenerate = true)
     @ColumnInfo (name = "Course_ID")
@@ -19,10 +56,10 @@ public class Course {
     public String courseName;
 
     @ColumnInfo (name = "Course_Start")
-    public Date courseStart;
+    public String courseStart;
 
     @ColumnInfo (name = "Course_End")
-    public Date courseEnd;
+    public String courseEnd;
 
     @ColumnInfo (name = "Course_Status")
     public String courseStatus;

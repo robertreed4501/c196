@@ -20,6 +20,7 @@ public class Repository {
     private LiveData<List<Term>> repoAllTerms;
     private LiveData<List<Course>> repoAllCourses;
     private LiveData<List<Assessment>> repoAllAssessments;
+    private LiveData<List<Course>> repoAllCoursesInTerm;
 
     public Repository(Application application){
         DB db = DB.getDB(application);
@@ -41,6 +42,11 @@ public class Repository {
 
     public LiveData<List<Assessment>> getAllAssessments() {
         return repoAllAssessments;
+    }
+
+    public LiveData<List<Course>> getAllCoursesInTerm(int termID){
+        repoAllCoursesInTerm = repoCourseDAO.getCourseByTermID(termID);
+        return repoAllCoursesInTerm;
     }
 
     public void insertTerm(Term term){

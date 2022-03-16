@@ -1,23 +1,17 @@
 package com.example.c196.ViewModel;
 
 import android.content.Intent;
-import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.ViewParent;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.c196.Database.Repository;
 import com.example.c196.Model.Term;
 import com.example.c196.R;
 import com.example.c196.UI.TermViewActivity;
-import com.example.c196.UI.TermsListActivity;
 
 import java.util.List;
 
@@ -29,8 +23,8 @@ public class TermViewHolder extends RecyclerView.ViewHolder {
 
     private TermViewHolder(@NonNull View itemView) {
         super(itemView);
-        termNameText = itemView.findViewById(R.id.termNameText);
-        termDatesText = itemView.findViewById(R.id.termDatesText);
+        termNameText = itemView.findViewById(R.id.courseNameText);
+        termDatesText = itemView.findViewById(R.id.courseDatesText);
         //viewModel = new ViewModel(TermViewHolder.this);
 
         itemView.setOnClickListener(view -> {

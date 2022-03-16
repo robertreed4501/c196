@@ -5,12 +5,15 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.AlertDialog;
 import android.app.Application;
+import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.c196.Database.Repository;
 import com.example.c196.Model.Term;
@@ -47,11 +50,26 @@ public class TermsListActivity extends AppCompatActivity {
 
     }
 
-    public void addClicked(View view){
+    public void addTermFABClicked(View view){
+        Toast.makeText(getApplicationContext(), "It hath been clicked", Toast.LENGTH_LONG).show();
+        Intent i = new Intent(TermsListActivity.this, AddEditTermActivity.class);
+        startActivity(i);
+    }
+
+    /*public void addClicked(View view){
         EditText text = (findViewById(R.id.termNameField));
         String name = text.getText().toString();
         ViewModel vm = new ViewModel((Application)view.getContext().getApplicationContext());
         vm.insertTerm(new Term(name, Date.from(Instant.now()), Date.from(Instant.now().plusSeconds(86400))));
-    }
+    }*/
 
 }
+
+/*
+* Should I have the capability to add courses without them being assigned to a term yet?
+*
+*
+*
+*
+*
+* */

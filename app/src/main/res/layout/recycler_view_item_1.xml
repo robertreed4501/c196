@@ -28,20 +28,20 @@
             tools:src="@tools:sample/avatars" />
 
         <TextView
-            android:id="@+id/termNameText"
+            android:id="@+id/courseNameText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginBottom="8dp"
             android:textColor="@android:color/black"
             android:textSize="20sp"
-            app:layout_constraintBottom_toTopOf="@+id/termDatesText"
+            app:layout_constraintBottom_toTopOf="@+id/courseDatesText"
             app:layout_constraintStart_toEndOf="@+id/termIcon"
             app:layout_constraintTop_toTopOf="@+id/termIcon"
             tools:text="@tools:sample/full_names" />
 
         <TextView
-            android:id="@+id/termDatesText"
+            android:id="@+id/courseDatesText"
             android:layout_width="299dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"

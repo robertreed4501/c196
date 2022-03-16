@@ -4,12 +4,13 @@ import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 @Entity (tableName = "Terms")
 public class Term {
 
-    public Term(String name, Date startDate, Date endDate){
+    public Term(String name, String startDate, String endDate){
         this.name = name;
         this.startDate = startDate;
         this.endDate = endDate;
@@ -23,10 +24,10 @@ public class Term {
     private String name;
 
     @ColumnInfo (name = "Term_Start")
-    private Date startDate;
+    private String startDate;
 
     @ColumnInfo (name = "Term_End")
-    private Date endDate;
+    private String endDate;
 
     public int getTermID() {
         return termID;
@@ -44,19 +45,19 @@ public class Term {
         this.name = name;
     }
 
-    public Date getStartDate() {
+    public String getStartDate() {
         return startDate;
     }
 
-    public void setStartDate(Date startDate) {
+    public void setStartDate(String startDate) {
         this.startDate = startDate;
     }
 
-    public Date getEndDate() {
+    public String getEndDate() {
         return endDate;
     }
 
-    public void setEndDate(Date endDate) {
+    public void setEndDate(String endDate) {
         this.endDate = endDate;
     }
 }

@@ -45,4 +45,8 @@ public class ViewModel extends AndroidViewModel {
     public LiveData<List<Term>> getVmAllTerms() {
         return vmAllTerms;
     }
+
+    public LiveData<List<Course>> getCoursesByTermID(int termID){
+        return repository.getAllCoursesInTerm(termID);
+    }
 }

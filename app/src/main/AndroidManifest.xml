@@ -10,12 +10,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.C196">
         <activity
+            android:name=".UI.AddEditTermActivity"
+            android:exported="false" />
+        <activity
             android:name=".UI.AssessmentViewActivity"
             android:exported="false" />
         <activity
             android:name=".UI.TermViewActivity"
             android:exported="false"
-            android:parentActivityName=".UI.TermsListActivity"/>
+            android:parentActivityName=".UI.TermsListActivity" />
         <activity
             android:name=".UI.CourseViewActivity"
             android:exported="false" />
@@ -28,7 +31,7 @@
         <activity
             android:name=".UI.TermsListActivity"
             android:exported="false"
-            android:parentActivityName=".UI.MainActivity"/>
+            android:parentActivityName=".UI.MainActivity" />
         <activity
             android:name=".UI.MainActivity"
             android:exported="true">
