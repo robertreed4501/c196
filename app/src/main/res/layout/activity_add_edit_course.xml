@@ -6,4 +6,195 @@
     android:layout_height="match_parent"
     tools:context=".UI.AddEditCourseActivity">
 
+    <TableLayout
+        android:id="@+id/tableLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textView240"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Course ID:" />
+
+            <TextView
+                android:id="@+id/addEditCourseIDText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="(Auto-gen)" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textView240"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Course Name:" />
+
+            <EditText
+                android:id="@+id/addEditCourseNameText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textView240"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Course Start:" />
+
+            <EditText
+                android:id="@+id/addEditCourseStartText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textView240"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Course End" />
+
+            <EditText
+                android:id="@+id/addEditCourseEndText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textView240"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Course Status" />
+
+            <EditText
+                android:id="@+id/addEditCourseStatusText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textView240"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Instructor's Name:" />
+
+            <EditText
+                android:id="@+id/addEditCourseInstructorNameText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textView240"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Instructor's Phone #:" />
+
+            <EditText
+                android:id="@+id/addEditCoursePhoneText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textView240"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Instructor's Email:" />
+
+            <EditText
+                android:id="@+id/addEditCourseEmailText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName" />
+
+        </TableRow>
+
+    </TableLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tableLayout">
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Notes:"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+        <EditText
+            android:id="@+id/editTextTextMultiLine"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:gravity="start|top"
+            android:inputType="textMultiLine" />
+
+        <Button
+            android:id="@+id/saveCourseButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Save Course" />
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

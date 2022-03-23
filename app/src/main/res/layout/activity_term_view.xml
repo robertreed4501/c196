@@ -6,62 +6,91 @@
     android:layout_height="match_parent"
     tools:context=".UI.TermViewActivity">
 
-    <TextView
-        android:id="@+id/termViewNameText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:text="TermViewActivitiy"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/termViewIDText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="TextView"
-        app:layout_constraintTop_toBottomOf="@+id/termViewNameText"
-        tools:layout_editor_absoluteX="45dp" />
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="201dp">
 
-    <TextView
-        android:id="@+id/termViewStartText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="TextView"
-        app:layout_constraintTop_toBottomOf="@+id/termViewIDText"
-        tools:layout_editor_absoluteX="42dp" />
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
 
-    <TextView
-        android:id="@+id/termViewEndText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="TextView"
-        app:layout_constraintTop_toBottomOf="@+id/termViewStartText"
-        tools:layout_editor_absoluteX="46dp" />
+                <TextView
+                    android:id="@+id/termViewIDText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+            </TableRow>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/courseRecyclerView"
-        android:layout_width="391dp"
-        android:layout_height="708dp"
-        android:layout_marginTop="60dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/termViewEndText" />
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
 
-    <Button
-        android:id="@+id/editTermButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="editTermClicked"
-        android:text="Edit Term"
-        app:layout_constraintBottom_toTopOf="@+id/courseRecyclerView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/termViewNameText"
-        app:layout_constraintTop_toTopOf="parent" />
+                <TextView
+                    android:id="@+id/termViewNameText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <TextView
+                    android:id="@+id/termViewStartText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <TextView
+                    android:id="@+id/termViewEndText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+            </TableRow>
+        </TableLayout>
+
+        <Button
+            android:id="@+id/editTermButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="editTermClicked"
+            android:text="Edit Term" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="649dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/courseRecyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="60dp"
+
+                    />
+            </LinearLayout>
+        </ScrollView>
+
+    </LinearLayout>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/termViewFAB"

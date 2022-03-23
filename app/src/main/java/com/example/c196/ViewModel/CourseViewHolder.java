@@ -1,5 +1,6 @@
 package com.example.c196.ViewModel;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +11,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.c196.Model.Course;
 import com.example.c196.R;
+import com.example.c196.UI.CourseViewActivity;
+import com.example.c196.UI.TermViewActivity;
 
 import java.util.List;
 
@@ -27,20 +30,25 @@ public class CourseViewHolder extends RecyclerView.ViewHolder {
         courseStatusText = itemView.findViewById(R.id.courseStatusText);
         //viewModel = new ViewModel(TermViewHolder.this);
 
-        /*itemView.setOnClickListener(view -> {
+        itemView.setOnClickListener(view -> {
             int position = getAdapterPosition();
             //Repository repo = new Repository(viewModel.getApplication());
             Course current = myList.get(position);
 
 
-            Intent i = new Intent(view.getContext().getApplicationContext(), TermViewActivity.class);
-            i.putExtra("Term_ID", current.getTermID());
-            i.putExtra("Term_Name", current.getName());
-            i.putExtra("Term_Start", current.getStartDate().toString());
-            i.putExtra("Term_End", current.getEndDate().toString());
+            Intent i = new Intent(view.getContext().getApplicationContext(), CourseViewActivity.class);
+            i.putExtra("Course_ID", current.getCourseID());
+            //i.putExtra("Course_ID", current.getCourseID());
+            i.putExtra("Course_Name", current.getCourseName());
+            i.putExtra("Course_Start", current.getCourseStart());
+            i.putExtra("Course_End", current.getCourseEnd());
+            i.putExtra("Course_Status", current.getCourseStatus());
+            i.putExtra("Instructor_Name", current.getInstructorName());
+            i.putExtra("Instructor_Email", current.getInstructorEmail());
+            i.putExtra("Instructor_Phone", current.getInstructorPhone());
             view.getContext().startActivity(i);
 
-        });*/
+        });
     }
 
     public static Course getCourseByPosition(int adapterPosition) {

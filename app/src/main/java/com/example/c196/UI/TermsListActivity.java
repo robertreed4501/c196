@@ -61,16 +61,19 @@ public class TermsListActivity extends AppCompatActivity {
 
             @Override
             public void onSwiped(RecyclerView.ViewHolder viewHolder, int direction) {
-
-
-
                 viewModel.deleteTerm(TermViewHolder.getTermByPosition(viewHolder.getAdapterPosition()));
                 adapter.notifyDataSetChanged();
             }
 
             @Override
             public void onChildDraw(Canvas c, RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder, float dX, float dY, int actionState, boolean isCurrentlyActive) {
-                // view the background view
+                super.onChildDraw(c, recyclerView, viewHolder, dX, dY, actionState, isCurrentlyActive);
+                if(actionState == ItemTouchHelper.ACTION_STATE_SWIPE) {
+
+                    final float alpha = 1 - Math.abs(dX) / (float)viewHolder.itemView.getWidth();
+                    viewHolder.itemView.setAlpha(alpha);
+                    viewHolder.itemView.setTranslationX(dX);
+                }
             }
         };
 
