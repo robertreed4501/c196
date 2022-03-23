@@ -21,6 +21,7 @@ public class Repository {
     private LiveData<List<Assessment>> repoAllAssessments;
     private LiveData<List<Course>> repoAllCoursesInTerm;
     private List<Term> terms;
+    private LiveData<List<Assessment>> repoAllAssessmentsInCourse;
 
     public Repository(Application application){
         DB db = DB.getDB(application);
@@ -74,10 +75,24 @@ public class Repository {
         DB.dbWriteExecutor.execute(() -> {
             terms = repoTermDAO.getTermByID(id);
         });
+        try {
+            Thread.sleep(500);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         return terms.get(0);
     }
 
     public void deleteCourse(Course course) {
         DB.dbWriteExecutor.execute(() -> repoCourseDAO.delete(course));
+    }
+
+    public LiveData<List<Assessment>> getAssessmentsByCourseID(int courseID){
+        repoAllAssessmentsInCourse = repoAssessmentDAO.getAssessmentsByCourseID(courseID);
+        return repoAllAssessmentsInCourse;
+    }
+
+    public void updateCourse(Course course) {
+        DB.dbWriteExecutor.execute(() -> repoCourseDAO.update(course))  ;
     }
 }

@@ -7,12 +7,12 @@ import android.view.MenuItem;
 
 import com.example.c196.R;
 
-public class AssessmentViewActivity extends AppCompatActivity {
+public class AddEditAssessmentActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_assessment_view);
+        setContentView(R.layout.activity_add_edit_assessment);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);

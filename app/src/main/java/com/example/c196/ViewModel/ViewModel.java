@@ -59,4 +59,12 @@ public class ViewModel extends AndroidViewModel {
     public LiveData<List<Course>> getCoursesByTermID(int termID){
         return repository.getAllCoursesInTerm(termID);
     }
+
+    public LiveData<List<Assessment>> getAssessmentsByCourseID(int courseID){
+        return repository.getAssessmentsByCourseID(courseID);
+    }
+
+    public void updateCourse(Course course) {
+        repository.updateCourse(course);
+    }
 }

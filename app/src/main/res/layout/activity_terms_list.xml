@@ -6,11 +6,23 @@
     android:layout_height="match_parent"
     tools:context=".UI.TermsListActivity">
 
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Terms"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textColor="#002F51"
+        app:layout_constraintBottom_toTopOf="@+id/scrollView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <ScrollView
         android:id="@+id/scrollView2"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_width="381dp"
+        android:layout_height="641dp"
+        android:layout_marginTop="50dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -31,6 +43,7 @@
                 app:layout_constraintTop_toTopOf="parent"
                 tools:itemCount="16"
                 tools:listitem="@layout/recycler_view_item_1" />
+
         </LinearLayout>
     </ScrollView>
 
@@ -42,6 +55,7 @@
         android:layout_marginBottom="16dp"
         android:clickable="true"
         android:onClick="addTermFABClicked"
+        android:tooltipText="Click to add a new term"
         app:fabSize="normal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

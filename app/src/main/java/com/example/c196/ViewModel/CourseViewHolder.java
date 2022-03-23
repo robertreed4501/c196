@@ -12,7 +12,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.c196.Model.Course;
 import com.example.c196.R;
 import com.example.c196.UI.CourseViewActivity;
-import com.example.c196.UI.TermViewActivity;
 
 import java.util.List;
 
@@ -27,7 +26,7 @@ public class CourseViewHolder extends RecyclerView.ViewHolder {
         super(itemView);
         courseNameText = itemView.findViewById(R.id.courseNameText);
         courseDatesText = itemView.findViewById(R.id.courseDatesText);
-        courseStatusText = itemView.findViewById(R.id.courseStatusText);
+        courseStatusText = itemView.findViewById(R.id.courseTypeText);
         //viewModel = new ViewModel(TermViewHolder.this);
 
         itemView.setOnClickListener(view -> {
@@ -46,6 +45,8 @@ public class CourseViewHolder extends RecyclerView.ViewHolder {
             i.putExtra("Instructor_Name", current.getInstructorName());
             i.putExtra("Instructor_Email", current.getInstructorEmail());
             i.putExtra("Instructor_Phone", current.getInstructorPhone());
+            i.putExtra("Course_Notes", current.getNotes());
+            i.putExtra("Associated_Term_ID", current.getTermID());
             view.getContext().startActivity(i);
 
         });

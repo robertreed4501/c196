@@ -6,7 +6,20 @@
     android:layout_height="match_parent"
     tools:context=".UI.CourseViewActivity">
 
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/addAssessmentFAB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="23dp"
+        android:clickable="true"
+        android:onClick="addAssessmentFABClicked"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@android:drawable/ic_input_add" />
+
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="391dp"
         android:layout_height="849dp"
         android:orientation="vertical"
@@ -22,7 +35,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical" >
+                android:orientation="vertical">
 
                 <TextView
                     android:id="@+id/courseViewIDText"
@@ -92,12 +105,14 @@
                     android:id="@+id/courseViewNotesText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:clickable="false"
+                    android:editable="false"
                     android:ems="10"
                     android:gravity="start|top"
                     android:inputType="textMultiLine" />
 
                 <Button
-                    android:id="@+id/button2"
+                    android:id="@+id/editCourseButton"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Edit course" />
@@ -111,7 +126,14 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical" >
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textView12"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Assessments"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/assessmentRecyclerView"

@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.C196">
         <activity
+            android:name=".UI.AddEditAssessmentActivity"
+            android:exported="false" />
+        <activity
             android:name=".UI.AddEditCourseActivity"
             android:exported="false" />
         <activity
@@ -17,20 +20,16 @@
             android:exported="false" />
         <activity
             android:name=".UI.AssessmentViewActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".UI.CourseViewActivity"/>
         <activity
             android:name=".UI.TermViewActivity"
             android:exported="false"
             android:parentActivityName=".UI.TermsListActivity" />
         <activity
             android:name=".UI.CourseViewActivity"
-            android:exported="false" />
-        <activity
-            android:name=".UI.AssessmentListActivity"
-            android:exported="false" />
-        <activity
-            android:name=".UI.CoursesListActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".UI.TermViewActivity"/>
         <activity
             android:name=".UI.TermsListActivity"
             android:exported="false"

@@ -5,6 +5,7 @@
       <map>
         <entry key="..\:/Users/rreed45/AndroidStudioProjects/c196/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.18162393162393162" />
         <entry key="..\:/Users/rreed45/AndroidStudioProjects/c196/app/src/main/res/drawable/ic_launcher_background.xml" value="0.18162393162393162" />
+        <entry key="..\:/Users/rreed45/AndroidStudioProjects/c196/app/src/main/res/drawable/ic_logo.xml" value="0.3141025641025641" />
         <entry key="..\:/Users/rreed45/AndroidStudioProjects/c196/app/src/main/res/layout-land/activity_term_view.xml" value="0.31040564373897706" />
         <entry key="..\:/Users/rreed45/AndroidStudioProjects/c196/app/src/main/res/layout-land/activity_terms_list.xml" value="0.31040564373897706" />
         <entry key="..\:/Users/rreed45/AndroidStudioProjects/c196/app/src/main/res/layout/activity_add_edit_course.xml" value="0.30085470085470084" />
@@ -16,7 +17,7 @@
         <entry key="..\:/Users/rreed45/AndroidStudioProjects/c196/app/src/main/res/layout/activity_terms_list.xml" value="0.2957427536231884" />
         <entry key="..\:/Users/rreed45/AndroidStudioProjects/c196/app/src/main/res/layout/recycler_view_item.xml" value="0.30085470085470084" />
         <entry key="..\:/Users/rreed45/AndroidStudioProjects/c196/app/src/main/res/layout/recycler_view_item_1.xml" value="0.30085470085470084" />
-        <entry key="..\:/Users/rreed45/AndroidStudioProjects/c196/app/src/main/res/layout/recycler_view_item_2.xml" value="0.1683760683760684" />
+        <entry key="..\:/Users/rreed45/AndroidStudioProjects/c196/app/src/main/res/layout/recycler_view_item_2.xml" value="0.25" />
         <entry key="..\:/Users/rreed45/AndroidStudioProjects/c196/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.18162393162393162" />
       </map>
     </option>

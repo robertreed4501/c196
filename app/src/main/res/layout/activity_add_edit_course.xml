@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".UI.AddEditCourseActivity">
 
+
     <TableLayout
         android:id="@+id/tableLayout"
         android:layout_width="0dp"
@@ -19,7 +20,7 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/textView240"
+                android:id="@+id/textView1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Course ID:" />
@@ -37,7 +38,7 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/textView240"
+                android:id="@+id/textView2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Course Name:" />
@@ -56,7 +57,7 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/textView240"
+                android:id="@+id/textView24"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Course Start:" />
@@ -75,7 +76,7 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/textView240"
+                android:id="@+id/textView2409"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Course End" />
@@ -94,7 +95,7 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/textView240"
+                android:id="@+id/textView2480"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Course Status" />
@@ -113,7 +114,7 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/textView240"
+                android:id="@+id/textView26"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Instructor's Name:" />
@@ -132,7 +133,7 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/textView240"
+                android:id="@+id/textView42069"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Instructor's Phone #:" />
@@ -184,7 +185,7 @@
             android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
         <EditText
-            android:id="@+id/editTextTextMultiLine"
+            android:id="@+id/addEditCourseNotes"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"

@@ -2,21 +2,24 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_height="match_parent"
     android:layout_width="match_parent"
-    android:background="#FFC6C6"
-    android:backgroundTint="#FDCBCB"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp"
+    android:background="#0E4571"
     android:backgroundTintMode="add"
-    app:cardBackgroundColor="#E1FFCDCD"
-    app:cardCornerRadius="5dp">
+    android:contextClickable="true"
+    app:cardBackgroundColor="#003661"
+    app:cardCornerRadius="6dp"
+    app:contentPadding="3dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:backgroundTint="#F8A7A7">
+        android:background="#FAFAFA"
+        android:backgroundTint="#FFFFFF">
 
         <ImageView
-            android:id="@+id/termIcon"
+            android:id="@+id/assessmentIcon"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_marginStart="8dp"
@@ -26,37 +29,37 @@
             tools:src="@tools:sample/avatars" />
 
         <TextView
-            android:id="@+id/courseNameText"
+            android:id="@+id/assessmentNameText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginBottom="8dp"
             android:textColor="@android:color/black"
             android:textSize="20sp"
-            app:layout_constraintBottom_toTopOf="@+id/courseDatesText"
-            app:layout_constraintStart_toEndOf="@+id/termIcon"
-            app:layout_constraintTop_toTopOf="@+id/termIcon"
+            app:layout_constraintBottom_toTopOf="@+id/assessmentDatesText"
+            app:layout_constraintStart_toEndOf="@+id/assessmentIcon"
+            app:layout_constraintTop_toTopOf="@+id/assessmentIcon"
             tools:text="@tools:sample/full_names" />
 
         <TextView
-            android:id="@+id/courseDatesText"
+            android:id="@+id/assessmentDatesText"
             android:layout_width="285dp"
             android:layout_height="20dp"
             android:layout_marginStart="8dp"
             android:layout_marginEnd="8dp"
-            app:layout_constraintBottom_toBottomOf="@+id/termIcon"
+            app:layout_constraintBottom_toBottomOf="@+id/assessmentIcon"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.050"
-            app:layout_constraintStart_toEndOf="@+id/termIcon"
+            app:layout_constraintStart_toEndOf="@+id/assessmentIcon"
             tools:text="@tools:sample/lorem[4:10]" />
 
         <TextView
-            android:id="@+id/courseStatusText"
+            android:id="@+id/assessmentTypeText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/termIcon"
+            app:layout_constraintTop_toTopOf="@+id/assessmentIcon"
             tools:text="@tools:sample/date/hhmm" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>

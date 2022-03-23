@@ -18,7 +18,7 @@
         android:background="#FFFFFF">
 
         <ImageView
-            android:id="@+id/termIcon"
+            android:id="@+id/assessmentIcon"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_marginStart="8dp"
@@ -28,28 +28,28 @@
             tools:src="@tools:sample/avatars" />
 
         <TextView
-            android:id="@+id/courseNameText"
+            android:id="@+id/assessmentNameText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginBottom="8dp"
             android:textColor="@android:color/black"
             android:textSize="20sp"
-            app:layout_constraintBottom_toTopOf="@+id/courseDatesText"
-            app:layout_constraintStart_toEndOf="@+id/termIcon"
-            app:layout_constraintTop_toTopOf="@+id/termIcon"
+            app:layout_constraintBottom_toTopOf="@+id/assessmentDatesText"
+            app:layout_constraintStart_toEndOf="@+id/assessmentIcon"
+            app:layout_constraintTop_toTopOf="@+id/assessmentIcon"
             tools:text="@tools:sample/full_names" />
 
         <TextView
-            android:id="@+id/courseDatesText"
+            android:id="@+id/assessmentDatesText"
             android:layout_width="299dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginEnd="8dp"
-            app:layout_constraintBottom_toBottomOf="@+id/termIcon"
+            app:layout_constraintBottom_toBottomOf="@+id/assessmentIcon"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.050"
-            app:layout_constraintStart_toEndOf="@+id/termIcon"
+            app:layout_constraintStart_toEndOf="@+id/assessmentIcon"
             tools:text="@tools:sample/lorem[4:10]" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

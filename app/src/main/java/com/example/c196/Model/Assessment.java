@@ -18,6 +18,30 @@ public class Assessment {
     @ColumnInfo(name = "Assessment_Name")
     public String assessmentName;
 
+    public int getAssessmentID() {
+        return assessmentID;
+    }
+
+    public String getAssessmentName() {
+        return assessmentName;
+    }
+
+    public String getAssessmentType() {
+        return assessmentType;
+    }
+
+    public String getAssessmentStart() {
+        return assessmentStart;
+    }
+
+    public String getAssessmentEnd() {
+        return assessmentEnd;
+    }
+
+    public int getAssociatedCourseID() {
+        return associatedCourseID;
+    }
+
     @ColumnInfo(name = "Assessment_Type")
     public String assessmentType;
 
@@ -29,4 +53,12 @@ public class Assessment {
 
     @ColumnInfo(name = "Associated_Course_ID", index = true)
     public int associatedCourseID;
+
+    public Assessment(String assessmentName, String assessmentType, String assessmentStart, String assessmentEnd, int associatedCourseID) {
+        this.assessmentName = assessmentName;
+        this.assessmentType = assessmentType;
+        this.assessmentStart = assessmentStart;
+        this.assessmentEnd = assessmentEnd;
+        this.associatedCourseID = associatedCourseID;
+    }
 }

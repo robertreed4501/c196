@@ -18,15 +18,8 @@ public class Course {
     }
 
     @Ignore
-    public Course(String courseName, String courseStart, String courseEnd, String courseStatus, int termID) {
-        this.courseName = courseName;
-        this.courseStart = courseStart;
-        this.courseEnd = courseEnd;
-        this.courseStatus = courseStatus;
-        this.termID = termID;
-    }
-
-    public Course(String courseName, String courseStart, String courseEnd, String courseStatus, String instructorName, String instructorPhone, String instructorEmail, int termID) {
+    public Course(int courseID, String courseName, String courseStart, String courseEnd, String courseStatus, String instructorName, String instructorPhone, String instructorEmail, int termID, String notes) {
+        this.courseID = courseID;
         this.courseName = courseName;
         this.courseStart = courseStart;
         this.courseEnd = courseEnd;
@@ -35,6 +28,28 @@ public class Course {
         this.instructorPhone = instructorPhone;
         this.instructorEmail = instructorEmail;
         this.termID = termID;
+        this.notes = notes;
+    }
+
+    @Ignore
+    public Course(String courseName, String courseStart, String courseEnd, String courseStatus, int termID) {
+        this.courseName = courseName;
+        this.courseStart = courseStart;
+        this.courseEnd = courseEnd;
+        this.courseStatus = courseStatus;
+        this.termID = termID;
+    }
+
+    public Course(String courseName, String courseStart, String courseEnd, String courseStatus, String instructorName, String instructorPhone, String instructorEmail, int termID, String notes) {
+        this.courseName = courseName;
+        this.courseStart = courseStart;
+        this.courseEnd = courseEnd;
+        this.courseStatus = courseStatus;
+        this.instructorName = instructorName;
+        this.instructorPhone = instructorPhone;
+        this.instructorEmail = instructorEmail;
+        this.termID = termID;
+        this.notes = notes;
     }
 
     public String getCourseName() {
@@ -69,6 +84,8 @@ public class Course {
         return termID;
     }
 
+    public String getNotes() { return notes; }
+
     @PrimaryKey (autoGenerate = true)
     @ColumnInfo (name = "Course_ID")
     public int courseID;
@@ -96,4 +113,7 @@ public class Course {
 
     @ColumnInfo(name = "Associated_Term_ID", index = true)
     public int termID;
+
+    @ColumnInfo(name = "Notes")
+    public String notes;
 }

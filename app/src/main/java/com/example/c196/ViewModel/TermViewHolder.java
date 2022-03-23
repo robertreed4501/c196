@@ -1,14 +1,12 @@
 package com.example.c196.ViewModel;
 
 import android.content.Intent;
-import android.os.Parcelable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.constraintlayout.motion.widget.OnSwipe;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.c196.Model.Term;
@@ -26,8 +24,8 @@ public class TermViewHolder extends RecyclerView.ViewHolder {
 
     private TermViewHolder(@NonNull View itemView) {
         super(itemView);
-        termNameText = itemView.findViewById(R.id.courseNameText);
-        termDatesText = itemView.findViewById(R.id.courseDatesText);
+        termNameText = itemView.findViewById(R.id.assessmentNameText);
+        termDatesText = itemView.findViewById(R.id.assessmentDatesText);
         //viewModel = new ViewModel(TermViewHolder.this);
 
         itemView.setOnClickListener(view -> {
