@@ -67,4 +67,12 @@ public class ViewModel extends AndroidViewModel {
     public void updateCourse(Course course) {
         repository.updateCourse(course);
     }
+
+    public void updateAssessment(Assessment assessment) {
+        repository.updateAssessment(assessment);
+    }
+
+    public Course getCourseByID(int courseID) {
+        return repository.getCourseByID(courseID);
+    }
 }

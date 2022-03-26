@@ -111,11 +111,25 @@
                     android:gravity="start|top"
                     android:inputType="textMultiLine" />
 
-                <Button
-                    android:id="@+id/editCourseButton"
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Edit course" />
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/editCourseButton"
+                        android:layout_width="184dp"
+                        android:layout_height="wrap_content"
+                        android:text="Edit course" />
+
+                    <Button
+                        android:id="@+id/shareNotesButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Share Notes" />
+                </LinearLayout>
+
             </LinearLayout>
         </ScrollView>
 

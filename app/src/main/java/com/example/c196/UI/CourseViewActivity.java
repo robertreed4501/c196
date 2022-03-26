@@ -22,6 +22,7 @@ public class CourseViewActivity extends AppCompatActivity {
 
     private ViewModel viewModel;
     private int associatedTermID;
+    private int courseID;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +32,7 @@ public class CourseViewActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
 
+        Button shareNotesButton = findViewById(R.id.shareNotesButton);
         Button editCourseButton = findViewById(R.id.editCourseButton);
         TextView courseIDText = findViewById(R.id.courseViewIDText);
         TextView nameText = findViewById(R.id.courseViewNameText);
@@ -43,7 +45,10 @@ public class CourseViewActivity extends AppCompatActivity {
         EditText courseNotesText = findViewById(R.id.courseViewNotesText);
 
         Intent i = getIntent();
-        if (i.hasExtra("Course_ID")) courseIDText.setText("Course ID: " + Integer.toString(i.getIntExtra("Course_ID", 0)));
+        if (i.hasExtra("Course_ID")){
+            courseIDText.setText("Course ID: " + Integer.toString(i.getIntExtra("Course_ID", 0)));
+            courseID = i.getIntExtra("Course_ID", 0);
+        }
         if (i.hasExtra("Course_Name")) nameText.setText("Course Name: " + i.getStringExtra("Course_Name"));
         if (i.hasExtra("Course_Start")) startText.setText("Course Start: " + i.getStringExtra("Course_Start"));
         if (i.hasExtra("Course_End")) endText.setText("Course End: " + i.getStringExtra("Course_End"));
@@ -86,6 +91,15 @@ public class CourseViewActivity extends AppCompatActivity {
             }
         });
 
+        shareNotesButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Intent.ACTION_SEND);
+                intent.setType("text/plain");
+                intent.putExtra(Intent.EXTRA_TEXT, courseNotesText.getText().toString());
+                startActivity(intent.createChooser(intent, "Share notes with: "));
+            }
+        });
 
 
     }
@@ -101,6 +115,8 @@ public class CourseViewActivity extends AppCompatActivity {
 
     public void addAssessmentFABClicked(View view){
         Intent intent = new Intent(CourseViewActivity.this, AddEditAssessmentActivity.class);
+        intent.putExtra("Is_New_Assessment", true);
+        intent.putExtra("Associated_Course_ID", courseID);
         startActivity(intent);
     }
 }

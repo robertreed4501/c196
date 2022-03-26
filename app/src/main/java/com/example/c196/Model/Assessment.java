@@ -3,6 +3,7 @@ package com.example.c196.Model;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.ForeignKey;
+import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
 
 import java.time.LocalDate;
@@ -53,6 +54,16 @@ public class Assessment {
 
     @ColumnInfo(name = "Associated_Course_ID", index = true)
     public int associatedCourseID;
+
+    @Ignore
+    public Assessment(int assessmentID, String assessmentName, String assessmentType, String assessmentStart, String assessmentEnd, int associatedCourseID) {
+        this.assessmentID = assessmentID;
+        this.assessmentName = assessmentName;
+        this.assessmentType = assessmentType;
+        this.assessmentStart = assessmentStart;
+        this.assessmentEnd = assessmentEnd;
+        this.associatedCourseID = associatedCourseID;
+    }
 
     public Assessment(String assessmentName, String assessmentType, String assessmentStart, String assessmentEnd, int associatedCourseID) {
         this.assessmentName = assessmentName;
