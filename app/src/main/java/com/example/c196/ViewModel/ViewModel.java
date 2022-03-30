@@ -75,4 +75,20 @@ public class ViewModel extends AndroidViewModel {
     public Course getCourseByID(int courseID) {
         return repository.getCourseByID(courseID);
     }
+
+    public void deleteAssessment(Assessment assessment) {
+        repository.deleteAssessment(assessment);
+    }
+
+    public LiveData<List<Course>> getVmAllCourses() {
+        return repository.getAllCourses();
+    }
+
+    public List<Course> getCourseList() {
+        return repository.getCourseList();
+    }
+
+    public List<Assessment> getAssessmentList() {
+        return repository.getAssessmentList();
+    }
 }

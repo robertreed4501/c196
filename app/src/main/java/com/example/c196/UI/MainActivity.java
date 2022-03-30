@@ -11,12 +11,12 @@ import com.example.c196.R;
 
 public class MainActivity extends AppCompatActivity {
 
+    public static int numAlert;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-
+        getSupportActionBar().setTitle("Degree Plan Scheduler");
     }
 
     public void toAddTermClicked(View view){

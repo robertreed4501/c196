@@ -11,6 +11,19 @@ import java.util.Date;
 @Entity (tableName = "Terms")
 public class Term {
 
+    @PrimaryKey (autoGenerate = true)
+    @ColumnInfo (name = "Term_ID")
+    private int termID;
+
+    @ColumnInfo (name = "Term_Name")
+    private String name;
+
+    @ColumnInfo (name = "Term_Start")
+    private String startDate;
+
+    @ColumnInfo (name = "Term_End")
+    private String endDate;
+
     public Term(String name, String startDate, String endDate){
         this.name = name;
         this.startDate = startDate;
@@ -24,19 +37,6 @@ public class Term {
         this.startDate = startDate;
         this.endDate = endDate;
     }
-
-    @PrimaryKey (autoGenerate = true)
-    @ColumnInfo (name = "Term_ID")
-    private int termID;
-
-    @ColumnInfo (name = "Term_Name")
-    private String name;
-
-    @ColumnInfo (name = "Term_Start")
-    private String startDate;
-
-    @ColumnInfo (name = "Term_End")
-    private String endDate;
 
     public int getTermID() {
         return termID;

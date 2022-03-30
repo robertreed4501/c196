@@ -17,11 +17,6 @@ public class CourseListAdapter extends ListAdapter<Course, CourseViewHolder> {
         super(diffCallback);
     }
 
-    /*public List<Term> getList(){
-        return getCurrentList();
-
-    }*/
-
     @NonNull
     @Override
     public CourseViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -38,14 +33,11 @@ public class CourseListAdapter extends ListAdapter<Course, CourseViewHolder> {
 
         @Override
         public boolean areItemsTheSame(@NonNull Course oldItem, @NonNull Course newItem) {
-            /*if (oldItem.equals(newItem)) return true; else return false;*/
             return false;
         }
 
         @Override
         public boolean areContentsTheSame(@NonNull Course oldItem, @NonNull Course newItem) {
-            /*if(oldItem.getName().equals(newItem.getName()) && oldItem.getStartDate().equals(newItem.getStartDate()) && oldItem.getEndDate().equals(newItem.getEndDate()))return false;
-            else return true;*/
             return false;
         }
     }

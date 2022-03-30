@@ -62,7 +62,15 @@ public class AddEditTermActivity extends AppCompatActivity {
 
         isNewTerm = i.getBooleanExtra("isNewTerm", true);
 
+        if (isNewTerm) getSupportActionBar().setTitle("Add Term");
+        else getSupportActionBar().setTitle("Edit Term");
 
+        if (savedInstanceState != null) {
+            termStart.setText(savedInstanceState.getInt("Start"));
+            termEnd.setText(savedInstanceState.getString("End"));
+        }
+
+        //onClickListener for startDateText.  opens up datePicker dialog
         termStart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -74,20 +82,17 @@ public class AddEditTermActivity extends AppCompatActivity {
 
                 DatePickerDialog startDateDialog = new DatePickerDialog(
                         AddEditTermActivity.this,
-
                         android.R.style.Theme_Translucent,
                         termStartListener,
                         year,
                         month,
-                        day
-                );
-
+                        day);
                 startDateDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-
                 startDateDialog.show();
             }
         });
 
+        //dateSetListener for startDate datePicker
         termStartListener = new DatePickerDialog.OnDateSetListener() {
             @Override
             public void onDateSet(DatePicker datePicker, int year, int month, int day) {
@@ -96,6 +101,7 @@ public class AddEditTermActivity extends AppCompatActivity {
             }
         };
 
+        //onClickListener for endDateText, opens datePicker dialog
         termEnd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -107,20 +113,17 @@ public class AddEditTermActivity extends AppCompatActivity {
 
                 DatePickerDialog endDateDialog = new DatePickerDialog(
                         AddEditTermActivity.this,
-
                         android.R.style.Theme_Translucent,
                         termEndListener,
                         year,
                         month,
-                        day
-                );
-
+                        day);
                 endDateDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-
                 endDateDialog.show();
             }
         });
 
+        //dateSetListener for endDate datePicker dialog
         termEndListener = new DatePickerDialog.OnDateSetListener() {
             @Override
             public void onDateSet(DatePicker datePicker, int year, int month, int day) {
@@ -133,16 +136,10 @@ public class AddEditTermActivity extends AppCompatActivity {
         saveTermButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                /*Term term = new Term("","","");
-                List<Term> termList = new ArrayList<>();
-                for (int i = 0; i < termList.size(); i++){
-                    if (termList.get(i).getTermID()==currentTermID)
-                        term = termList.get(i);
-                }
-                viewModel.getVmAllTerms().getValue();*/
                 String name = termName.getText().toString();
                 String start = termStart.getText().toString();
                 String end = termEnd.getText().toString();
+
                 if(isNewTerm) viewModel.insertTerm(new Term(name, start, end));
                 else viewModel.updateTerm(new Term(currentTerm.getTermID(), name, start, end));
 
@@ -163,5 +160,12 @@ public class AddEditTermActivity extends AppCompatActivity {
                 return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putString("Start", termStart.getText().toString());
+        outState.putString("End", termEnd.getText().toString());
     }
 }

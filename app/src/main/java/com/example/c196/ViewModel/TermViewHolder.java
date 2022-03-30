@@ -19,20 +19,16 @@ import java.util.List;
 public class TermViewHolder extends RecyclerView.ViewHolder {
     private final TextView termNameText;
     private final TextView termDatesText;
-    private ViewModel viewModel;
     private static List<Term> myList;
 
     private TermViewHolder(@NonNull View itemView) {
         super(itemView);
         termNameText = itemView.findViewById(R.id.assessmentNameText);
         termDatesText = itemView.findViewById(R.id.assessmentDatesText);
-        //viewModel = new ViewModel(TermViewHolder.this);
 
         itemView.setOnClickListener(view -> {
             int position = getAdapterPosition();
-            //Repository repo = new Repository(viewModel.getApplication());
             Term current = myList.get(position);
-
 
             Intent i = new Intent(view.getContext().getApplicationContext(), TermViewActivity.class);
             i.putExtra("Term_ID", current.getTermID());
@@ -41,10 +37,7 @@ public class TermViewHolder extends RecyclerView.ViewHolder {
             i.putExtra("Term_End", current.getEndDate().toString());
             AddEditTermActivity.setCurrentTerm(current);
             view.getContext().startActivity(i);
-
         });
-
-
     }
 
     public void bind(String name, String dates){
@@ -57,10 +50,6 @@ public class TermViewHolder extends RecyclerView.ViewHolder {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.recycler_view_item_1, parent, false);
         return new TermViewHolder(view);
     }
-
-    /*public void setList(List<Term> myTerms){
-        this.myList = myTerms;
-    }*/
 
     public static Term getTermByPosition(int position){
         return myList.get(position);

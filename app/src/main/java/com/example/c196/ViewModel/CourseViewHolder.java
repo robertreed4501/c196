@@ -27,17 +27,13 @@ public class CourseViewHolder extends RecyclerView.ViewHolder {
         courseNameText = itemView.findViewById(R.id.courseNameText);
         courseDatesText = itemView.findViewById(R.id.courseDatesText);
         courseStatusText = itemView.findViewById(R.id.courseTypeText);
-        //viewModel = new ViewModel(TermViewHolder.this);
 
         itemView.setOnClickListener(view -> {
             int position = getAdapterPosition();
-            //Repository repo = new Repository(viewModel.getApplication());
             Course current = myList.get(position);
-
 
             Intent i = new Intent(view.getContext().getApplicationContext(), CourseViewActivity.class);
             i.putExtra("Course_ID", current.getCourseID());
-            //i.putExtra("Course_ID", current.getCourseID());
             i.putExtra("Course_Name", current.getCourseName());
             i.putExtra("Course_Start", current.getCourseStart());
             i.putExtra("Course_End", current.getCourseEnd());
@@ -48,7 +44,6 @@ public class CourseViewHolder extends RecyclerView.ViewHolder {
             i.putExtra("Course_Notes", current.getNotes());
             i.putExtra("Associated_Term_ID", current.getTermID());
             view.getContext().startActivity(i);
-
         });
     }
 
@@ -67,9 +62,4 @@ public class CourseViewHolder extends RecyclerView.ViewHolder {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.recycler_view_item_2, parent, false);
         return new CourseViewHolder(view);
     }
-
-    /*public void setList(List<Term> myTerms){
-        this.myList = myTerms;
-    }*/
-
 }

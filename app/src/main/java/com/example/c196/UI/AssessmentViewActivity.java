@@ -40,6 +40,7 @@ public class AssessmentViewActivity extends AppCompatActivity {
         endText.setText(i.getStringExtra("Assessment_End"));
         associatedCourseID = i.getIntExtra("Associated_Course_ID", 0);
 
+        getSupportActionBar().setTitle("Assessment: " + i.getStringExtra("Assessment_Name"));
 
         editAssButton.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -10,7 +10,6 @@ import androidx.room.Update;
 
 import com.example.c196.Model.Assessment;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Dao
@@ -33,4 +32,7 @@ public interface AssessmentDAO {
 
     @Query("SELECT * FROM Assessments WHERE Associated_Course_ID=:courseID")
     LiveData<List<Assessment>> getAssessmentsByCourseID(int courseID);
+
+    @Query("SELECT * FROM Assessments")
+    List<Assessment> getCourseList();
 }

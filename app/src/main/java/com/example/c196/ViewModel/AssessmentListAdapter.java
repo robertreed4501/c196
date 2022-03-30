@@ -14,8 +14,6 @@ public class AssessmentListAdapter extends ListAdapter<Assessment, AssessmentVie
         super(diffCallback);
     }
 
-
-
     @NonNull
     @Override
     public AssessmentViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -32,14 +30,11 @@ public class AssessmentListAdapter extends ListAdapter<Assessment, AssessmentVie
 
         @Override
         public boolean areItemsTheSame(@NonNull Assessment oldItem, @NonNull Assessment newItem) {
-            /*if (oldItem.equals(newItem)) return true; else return false;*/
             return false;
         }
 
         @Override
         public boolean areContentsTheSame(@NonNull Assessment oldItem, @NonNull Assessment newItem) {
-            /*if(oldItem.getName().equals(newItem.getName()) && oldItem.getStartDate().equals(newItem.getStartDate()) && oldItem.getEndDate().equals(newItem.getEndDate()))return false;
-            else return true;*/
             return false;
         }
     }

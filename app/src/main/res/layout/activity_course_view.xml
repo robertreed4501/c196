@@ -20,140 +20,142 @@
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="391dp"
-        android:layout_height="849dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <ScrollView
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="375dp">
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-            <LinearLayout
+            <TextView
+                android:id="@+id/courseViewIDText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:layout_margin="5dp"
+                android:text="@string/textview"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
-                <TextView
-                    android:id="@+id/courseViewIDText"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
-                    android:text="TextView"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+            <TextView
+                android:id="@+id/courseViewNameText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:text="@string/textview"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
-                <TextView
-                    android:id="@+id/courseViewNameText"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
-                    android:text="TextView"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+            <TextView
+                android:id="@+id/courseViewStartText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:text="@string/textview"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
-                <TextView
-                    android:id="@+id/courseViewStartText"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
-                    android:text="TextView"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+            <TextView
+                android:id="@+id/courseViewEndText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:text="@string/textview"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
-                <TextView
-                    android:id="@+id/courseViewEndText"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
-                    android:text="TextView"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+            <TextView
+                android:id="@+id/courseViewStatusText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:text="@string/textview"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
-                <TextView
-                    android:id="@+id/courseViewStatusText"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
-                    android:text="TextView"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+            <TextView
+                android:id="@+id/courseViewInstructorNameText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:text="@string/textview"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
-                <TextView
-                    android:id="@+id/courseViewInstructorNameText"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
-                    android:text="TextView"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+            <TextView
+                android:id="@+id/courseViewPhoneText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:text="@string/textview"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
-                <TextView
-                    android:id="@+id/courseViewPhoneText"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
-                    android:text="TextView"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+            <TextView
+                android:id="@+id/courseViewEmailText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:text="@string/textview"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
-                <TextView
-                    android:id="@+id/courseViewEmailText"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
-                    android:text="TextView"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
-
-                <EditText
-                    android:id="@+id/courseViewNotesText"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:clickable="false"
-                    android:editable="false"
-                    android:ems="10"
-                    android:gravity="start|top"
-                    android:inputType="textMultiLine" />
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="horizontal">
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
 
-                    <Button
-                        android:id="@+id/editCourseButton"
-                        android:layout_width="184dp"
+                    <TextView
+                        android:id="@+id/courseViewNotesText"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Edit course" />
-
-                    <Button
-                        android:id="@+id/shareNotesButton"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="Share Notes" />
+                        android:clickable="false"
+                        android:editable="false"
+                        android:ems="10"
+                        android:gravity="start|top"
+                        android:inputType="textMultiLine" />
                 </LinearLayout>
+            </ScrollView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/editCourseButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/edit_course" />
+
+                <Button
+                    android:id="@+id/shareNotesButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/share_notes" />
 
             </LinearLayout>
-        </ScrollView>
+
+            <TextView
+                android:id="@+id/textView12"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/assessments"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
+
+        </LinearLayout>
 
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <LinearLayout
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/assessmentRecyclerView"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/textView12"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Assessments"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
-
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/assessmentRecyclerView"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
-            </LinearLayout>
+                android:layout_height="wrap_content" />
         </ScrollView>
 
     </LinearLayout>

@@ -13,9 +13,37 @@ import java.util.Date;
 @Entity (tableName = "Courses", foreignKeys =  @ForeignKey(entity=Term.class, parentColumns="Term_ID", childColumns="Associated_Term_ID"))
 public class Course {
 
-    public int getCourseID() {
-        return courseID;
-    }
+    @PrimaryKey (autoGenerate = true)
+    @ColumnInfo (name = "Course_ID")
+    private int courseID;
+
+    @ColumnInfo (name = "Course_Name")
+    private String courseName;
+
+    @ColumnInfo (name = "Course_Start")
+    private String courseStart;
+
+    @ColumnInfo (name = "Course_End")
+    private String courseEnd;
+
+    @ColumnInfo (name = "Course_Status")
+    private String courseStatus;
+
+    @ColumnInfo (name = "Instructor_Name")
+    private String instructorName;
+
+    @ColumnInfo (name = "Instructor_Phone")
+    private String instructorPhone;
+
+    @ColumnInfo (name = "Instructor_Email")
+    private String instructorEmail;
+
+    @ColumnInfo(name = "Associated_Term_ID", index = true)
+    private int termID;
+
+    @ColumnInfo(name = "Notes")
+    private String notes;
+
 
     @Ignore
     public Course(int courseID, String courseName, String courseStart, String courseEnd, String courseStatus, String instructorName, String instructorPhone, String instructorEmail, int termID, String notes) {
@@ -52,6 +80,10 @@ public class Course {
         this.notes = notes;
     }
 
+    public int getCourseID() {
+        return courseID;
+    }
+
     public String getCourseName() {
         return courseName;
     }
@@ -84,36 +116,49 @@ public class Course {
         return termID;
     }
 
-    public String getNotes() { return notes; }
+    public String getNotes() {
+        return notes;
+    }
 
-    @PrimaryKey (autoGenerate = true)
-    @ColumnInfo (name = "Course_ID")
-    public int courseID;
+    public void setCourseID(int courseID) {
+        this.courseID = courseID;
+    }
 
-    @ColumnInfo (name = "Course_Name")
-    public String courseName;
+    public void setCourseName(String courseName) {
+        this.courseName = courseName;
+    }
 
-    @ColumnInfo (name = "Course_Start")
-    public String courseStart;
+    public void setCourseStart(String courseStart) {
+        this.courseStart = courseStart;
+    }
 
-    @ColumnInfo (name = "Course_End")
-    public String courseEnd;
+    public void setCourseEnd(String courseEnd) {
+        this.courseEnd = courseEnd;
+    }
 
-    @ColumnInfo (name = "Course_Status")
-    public String courseStatus;
+    public void setCourseStatus(String courseStatus) {
+        this.courseStatus = courseStatus;
+    }
 
-    @ColumnInfo (name = "Instructor_Name")
-    public String instructorName;
+    public void setInstructorName(String instructorName) {
+        this.instructorName = instructorName;
+    }
 
-    @ColumnInfo (name = "Instructor_Phone")
-    public String instructorPhone;
+    public void setInstructorPhone(String instructorPhone) {
+        this.instructorPhone = instructorPhone;
+    }
 
-    @ColumnInfo (name = "Instructor_Email")
-    public String instructorEmail;
+    public void setInstructorEmail(String instructorEmail) {
+        this.instructorEmail = instructorEmail;
+    }
 
-    @ColumnInfo(name = "Associated_Term_ID", index = true)
-    public int termID;
+    public void setTermID(int termID) {
+        this.termID = termID;
+    }
 
-    @ColumnInfo(name = "Notes")
-    public String notes;
+    public void setNotes(String notes) {
+        this.notes = notes;
+    }
+
+
 }

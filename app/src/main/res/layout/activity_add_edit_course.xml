@@ -23,13 +23,15 @@
                 android:id="@+id/textView1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Course ID:" />
+                android:text="Course ID:"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
             <TextView
                 android:id="@+id/addEditCourseIDText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="(Auto-gen)" />
+                android:text="(Auto-gen)"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
         </TableRow>
 
@@ -41,14 +43,16 @@
                 android:id="@+id/textView2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Course Name:" />
+                android:text="Course Name:"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
             <EditText
                 android:id="@+id/addEditCourseNameText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:inputType="textPersonName" />
+                android:inputType="textPersonName"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
         </TableRow>
 
@@ -60,14 +64,16 @@
                 android:id="@+id/textView24"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Course Start:" />
+                android:text="Course Start:"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
-            <EditText
+            <TextView
                 android:id="@+id/addEditCourseStartText"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="48dp"
                 android:ems="10"
-                android:inputType="textPersonName" />
+                android:inputType="textPersonName"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
         </TableRow>
 
@@ -79,15 +85,36 @@
                 android:id="@+id/textView2409"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Course End" />
+                android:text="Course End"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
-            <EditText
+            <TextView
                 android:id="@+id/addEditCourseEndText"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="48dp"
                 android:ems="10"
-                android:inputType="textPersonName" />
+                android:inputType="textPersonName"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <Switch
+                android:id="@+id/courseStartSwitch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Notify Me on Start"
+                android:textAppearance="@style/TextAppearance.AppCompat.Small" />
+
+            <Switch
+                android:id="@+id/courseEndSwitch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Notify Me on End"
+                android:textAppearance="@style/TextAppearance.AppCompat.Small" />
         </TableRow>
 
         <TableRow
@@ -98,14 +125,13 @@
                 android:id="@+id/textView2480"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Course Status" />
+                android:text="Course Status"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
-            <EditText
-                android:id="@+id/addEditCourseStatusText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="textPersonName" />
+            <Spinner
+                android:id="@+id/courseStatusSpinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
 
         </TableRow>
 
@@ -117,14 +143,16 @@
                 android:id="@+id/textView26"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Instructor's Name:" />
+                android:text="Instructor's Name:"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
             <EditText
                 android:id="@+id/addEditCourseInstructorNameText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:inputType="textPersonName" />
+                android:inputType="textPersonName"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
         </TableRow>
 
@@ -136,14 +164,16 @@
                 android:id="@+id/textView42069"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Instructor's Phone #:" />
+                android:text="Instructor's Phone #:"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
             <EditText
                 android:id="@+id/addEditCoursePhoneText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:inputType="textPersonName" />
+                android:inputType="textPersonName"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
         </TableRow>
 
@@ -155,14 +185,16 @@
                 android:id="@+id/textView240"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Instructor's Email:" />
+                android:text="Instructor's Email:"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
             <EditText
                 android:id="@+id/addEditCourseEmailText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:inputType="textPersonName" />
+                android:inputType="textPersonName"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
         </TableRow>
 

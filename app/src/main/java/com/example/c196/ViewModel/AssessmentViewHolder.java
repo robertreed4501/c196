@@ -62,7 +62,4 @@ public class AssessmentViewHolder extends RecyclerView.ViewHolder {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.recycler_view_item, parent, false);
         return new AssessmentViewHolder(view);
     }
-
-
-
 }
