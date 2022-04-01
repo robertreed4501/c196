@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">c196</string>
+    <string name="app_name">Degree Plan Scheduler</string>
     <string name="save_term">save term</string>
     <string name="channel_name">Degree Plan Notifications</string>
     <string name="channel_description">From WGU App</string>
